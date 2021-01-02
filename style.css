@@ -1,0 +1,92 @@
+:root{
+    --font-large: 42px;
+    --font-medium: 25px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button{
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+/* Navbar */
+section#Home{
+    background-color: #fca558;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.navbar__logo{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar__menu{
+    list-style-type: none;
+}
+
+.navbar__menu__items{
+    display: inline;
+    margin: 0.6rem;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.navbar__menu__items.active{
+    border : solid white 1px;
+}
+
+.navbar__menu__items:hover{
+    background-color: #d88d4b;
+}
+
+/* homeContent */
+.homeContent{
+    text-align: center;
+    padding: 2rem;
+}
+
+.home__img{
+    border : 0.5px solid white;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.home__title{
+    color: white;
+    font-size: var(--font-large);
+}
+
+.home__description{
+    color: white;
+    font-size : var(--font-medium);
+}
+
+.home__contact{
+    border: solid white 1px;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    
+}
+
+
