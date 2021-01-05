@@ -32,10 +32,18 @@ section#Home{
 }
 
 .navbar{
+    position : fixed;
+    width : 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    box-sizing: border-box;
+    padding : 0.2rem 1rem;
+    background-color: transparent;
+}
+
+.navbar.--dark{
+    background-color: lightcoral;
 }
 
 .navbar__logo{
@@ -81,7 +89,7 @@ section#Home{
 /* homeContent */
 .homeContent{
     text-align: center;
-    padding: 2rem;
+    padding : 100px 2rem;
 }
 
 .home__img{
