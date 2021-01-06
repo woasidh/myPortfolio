@@ -14,6 +14,11 @@ document.addEventListener('scroll', ()=>{
     }
 })
 
-navItem.addEventListener('click', ()=>{
-    console.log(navItem);
+navItem.addEventListener('click', (event)=>{
+    let getLink = event.target.dataset.content;
+    console.log(getLink);
+    if(getLink){
+        let scrollTo = document.querySelector(event.target.dataset.content);
+        scrollTo.scrollIntoView({behavior: "smooth"});
+    }
 })
