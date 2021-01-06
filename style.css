@@ -309,8 +309,9 @@ section#myWork{
 }
 
 .work__img__container{
-    display: fex;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 30px;
     opacity: 1;
     transition: all 200ms linear;
@@ -380,17 +381,18 @@ section#myWork{
 
     .navbar{
         flex-direction: column;
+        background-color: lightcoral;
     }
 
-    .navbar__menu{
+    ul.navbar__menu{
         flex-direction: column;
-        /* display : none; */
-        opacity : 0;
+        width :100%;
+        text-align: center;
+        display : none;
     }
 
-    .navbar__menu.visible{
-        /* display : block; */
-        opacity: 1;
+    ul.navbar__menu.--visible{
+        display: flex;
     }
 
     .about__majors{

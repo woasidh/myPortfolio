@@ -3,7 +3,7 @@
 const home = document.querySelector('section#Home');
 const homeC = document.querySelector('.homeContent');
 const navBar = document.querySelector('nav.navbar');
-const navItem = document.querySelector('.navbar__menu');
+const navItem = document.querySelector('ul.navbar__menu');
 const contactBtn = document.querySelector('.home__contact');
 const upBtn = document.querySelector('.goUp');
 const prjBtn = document.querySelector('.category__container');
@@ -36,6 +36,10 @@ navItem.addEventListener('click', (event) => {
         let scrollTo = document.querySelector(getLink);
         scrollTo.scrollIntoView({ behavior: "smooth" });
     }
+    let onActive = document.querySelectorAll('.navbar__menu__items.active')
+    onActive[0].classList.remove('active');
+    event.target.classList.add('active');
+    navItem.classList.remove('--visible');
 })
 
 contactBtn.addEventListener('click', (event) => {
@@ -75,7 +79,6 @@ prjBtn.addEventListener('click', (event) => {
 
 })
 
-hamburger.addEventListener('click', ()=>{
-    /* console.log('1') */
-    navItem.classList.add('--visible');
-})
+ hamburger.addEventListener('click', ()=>{
+    navItem.classList.toggle('--visible');
+}) 
