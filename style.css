@@ -26,6 +26,30 @@ button{
     cursor: pointer;
     outline: none;
 }
+/* upbutton */
+
+.goUp{
+    border: none;
+    position: fixed;
+    right : 20px;
+    bottom: 20px;
+    font-size: 50px;
+    height : 60px;
+    width : 60px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    opacity : 0;
+    pointer-events: none;
+    transition: all 300ms linear;
+}
+
+.goUp.--visible{
+    opacity : 1;
+    pointer-events: auto;
+}
+
 /* Navbar */
 section#Home{
     background-image: url("imgs/home_background.png");
@@ -44,6 +68,7 @@ section#Home{
 
 .navbar.--dark{
     background-color: lightcoral;
+    z-index: 1;
 }
 
 .navbar__logo{
@@ -57,6 +82,7 @@ section#Home{
 }
 
 .navbar__menu{
+    display : flex;
     list-style-type: none;
     padding: 0;
 }
@@ -84,6 +110,7 @@ section#Home{
     position: absolute;
     right:32px;
     display: none;
+    border: none;
 }
 
 /* homeContent */
@@ -285,6 +312,13 @@ section#myWork{
     display: fex;
     flex-wrap: wrap;
     margin-top: 30px;
+    opacity: 1;
+    transition: all 200ms linear;
+}
+
+.work__img__container.--invisible{
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
 }
 
 .prj__img__card{
@@ -294,6 +328,11 @@ section#myWork{
     width : 150px;
     margin : 20px;
     position: relative;
+    transition: all 300ms linear;
+}
+
+.prj__img__card.--invisible{
+    display: none;
 }
 
 .prj__img__card:hover .prj__img__description{
@@ -344,9 +383,14 @@ section#myWork{
     }
 
     .navbar__menu{
-        display: flex;
         flex-direction: column;
-        display: none;
+        /* display : none; */
+        opacity : 0;
+    }
+
+    .navbar__menu.visible{
+        /* display : block; */
+        opacity: 1;
     }
 
     .about__majors{
