@@ -16,8 +16,6 @@ const navThresh =
     home.getBoundingClientRect().height - navBar.getBoundingClientRect().height
 document.addEventListener('scroll', () => {
 
-    console.log(window.scrollY);
-
     if (window.scrollY > navThresh) {
         navBar.classList.add('--dark');
         upBtn.classList.add('--visible');
@@ -31,7 +29,6 @@ document.addEventListener('scroll', () => {
 
 navItem.addEventListener('click', (event) => {
     let getLink = event.target.dataset.content;
-    console.log(getLink);
     if (getLink) {
         let scrollTo = document.querySelector(getLink);
         scrollTo.scrollIntoView({ behavior: "smooth" });
@@ -53,10 +50,10 @@ upBtn.addEventListener('click', () => {
 
 prjBtn.addEventListener('click', (event) => {
     let target = event.target;
-    work_btn.forEach((elm)=>{
-        if(elm === target){
+    work_btn.forEach((elm) => {
+        if (elm === target) {
             elm.classList.add('active');
-        }else{
+        } else {
             elm.classList.remove('active');
         }
     })
@@ -79,6 +76,34 @@ prjBtn.addEventListener('click', (event) => {
 
 })
 
- hamburger.addEventListener('click', ()=>{
+hamburger.addEventListener('click', () => {
     navItem.classList.toggle('--visible');
-}) 
+})
+
+/* Intersection Observer */
+let sectionArray = [
+    '#Home',
+    '#about',
+    '#skill',
+    '#myWork',
+    '#contact'
+]
+
+const sections = document.querySelectorAll('section');
+console.log(sections);
+
+/* options */
+let options = {
+    threshold: 0
+}
+
+/* callback function */
+let callback = (entries, observer) => {
+    console.log(entries)
+}
+let observer = new IntersectionObserver(callback, options);
+
+observer.observe(sections[0]);
+sections.forEach(entry => {
+    observer.observe(entry);
+})
